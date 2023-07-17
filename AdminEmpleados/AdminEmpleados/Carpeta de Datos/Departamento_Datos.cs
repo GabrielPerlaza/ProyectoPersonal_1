@@ -31,11 +31,19 @@ namespace AdminEmpleados.Carpeta_de_Datos
             return 1;
         }
 
+        public int Modificar(Departamento_Negocio oDepartamento_Negocio)
+        {
+            conexion.ejecucionComando_Noretornable("UPDATE Departamentos SET departamento = '"+oDepartamento_Negocio.departamento+ "' WHERE ID="+oDepartamento_Negocio.ID);
+            return 1;
+        }
+
         public DataSet Mostrar_Departamento()
         {
             SqlCommand sentencia = new SqlCommand("SELECT * FROM Departamentos");
 
             return conexion.EjecutarSentencia(sentencia);
         }
+
+       
     }
 }

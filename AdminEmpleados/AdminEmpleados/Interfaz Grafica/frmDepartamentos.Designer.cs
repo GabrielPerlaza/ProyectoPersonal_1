@@ -75,12 +75,13 @@
             // 
             // btnModificar_Dep
             // 
-            this.btnModificar_Dep.Location = new System.Drawing.Point(142, 90);
+            this.btnModificar_Dep.Location = new System.Drawing.Point(143, 90);
             this.btnModificar_Dep.Name = "btnModificar_Dep";
             this.btnModificar_Dep.Size = new System.Drawing.Size(75, 23);
             this.btnModificar_Dep.TabIndex = 4;
             this.btnModificar_Dep.Text = "Modificar";
             this.btnModificar_Dep.UseVisualStyleBackColor = true;
+            this.btnModificar_Dep.Click += new System.EventHandler(this.btnModificar_Dep_Click);
             // 
             // btnEliminar_Dep
             // 

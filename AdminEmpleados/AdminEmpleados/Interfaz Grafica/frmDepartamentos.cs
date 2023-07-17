@@ -21,7 +21,7 @@ namespace AdminEmpleados.Interfaz_Grafica
         {
             oDepartamento_Datos = new Departamento_Datos();
             InitializeComponent();
-            dgvDepartamento.DataSource = oDepartamento_Datos.Mostrar_Departamento().Tables[0];
+            LlegarGrid();
 
         }
 
@@ -60,6 +60,17 @@ namespace AdminEmpleados.Interfaz_Grafica
         private void btnEliminar_Dep_Click(object sender, EventArgs e)
         { 
             oDepartamento_Datos.Eliminar(RecuperarInformacion());
+            LlegarGrid();
+        }
+
+        private void btnModificar_Dep_Click(object sender, EventArgs e)
+        {
+            oDepartamento_Datos.Modificar(RecuperarInformacion());
+            LlegarGrid();
+        }
+
+        public void LlegarGrid()
+        {
             dgvDepartamento.DataSource = oDepartamento_Datos.Mostrar_Departamento().Tables[0];
         }
     }
