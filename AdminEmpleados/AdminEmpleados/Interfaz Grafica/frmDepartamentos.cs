@@ -40,7 +40,7 @@ namespace AdminEmpleados.Interfaz_Grafica
             oDepartamento_Negocio = new Departamento_Negocio();
 
 
-            int ID = 0; int.TryParse(txtDepartamento.Text, out ID);
+            int ID = 0; int.TryParse(txtID.Text, out ID);
 
             oDepartamento_Negocio.ID = ID;
             oDepartamento_Negocio.departamento = txtDepartamento.Text;

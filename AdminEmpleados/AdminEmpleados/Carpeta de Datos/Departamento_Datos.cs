@@ -27,8 +27,7 @@ namespace AdminEmpleados.Carpeta_de_Datos
 
         public int Eliminar(Departamento_Negocio oDepartamento_Negocio)
         {
-            conexion.ejecucionComando_Noretornable("DELETE FROM Departamentos WHERE ID="+oDepartamento_Negocio.ID);
-            
+                conexion.ejecucionComando_Noretornable("Delete from Departamentos Where ID=" + oDepartamento_Negocio.ID);
             return 1;
         }
 
