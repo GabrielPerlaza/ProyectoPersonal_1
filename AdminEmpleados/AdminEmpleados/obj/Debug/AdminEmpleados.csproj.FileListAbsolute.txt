@@ -1,0 +1,13 @@
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\bin\Debug\AdminEmpleados.exe.config
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\bin\Debug\AdminEmpleados.exe
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\bin\Debug\AdminEmpleados.pdb
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.csproj.AssemblyReference.cache
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.Form1.resources
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.Interfaz_Grafica.frmDepartamentos.resources
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.Interfaz_Grafica.frmEmpleados.resources
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.Properties.Resources.resources
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.csproj.GenerateResource.cache
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.exe
+C:\Users\Gabriel Perlaza\OneDrive\Escritorio\Proyecto Personal\AdminEmpleados\AdminEmpleados\obj\Debug\AdminEmpleados.pdb
