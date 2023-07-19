@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDepartamentos));
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
@@ -65,41 +66,53 @@
             // 
             // btnAgregar_Dep
             // 
-            this.btnAgregar_Dep.Location = new System.Drawing.Point(40, 90);
+            this.btnAgregar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar_Dep.Image")));
+            this.btnAgregar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar_Dep.Location = new System.Drawing.Point(40, 82);
             this.btnAgregar_Dep.Name = "btnAgregar_Dep";
-            this.btnAgregar_Dep.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar_Dep.Size = new System.Drawing.Size(79, 39);
             this.btnAgregar_Dep.TabIndex = 3;
             this.btnAgregar_Dep.Text = "Agregar";
+            this.btnAgregar_Dep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar_Dep.UseVisualStyleBackColor = true;
             this.btnAgregar_Dep.Click += new System.EventHandler(this.btnAgregar_Dep_Click);
             // 
             // btnModificar_Dep
             // 
-            this.btnModificar_Dep.Location = new System.Drawing.Point(143, 90);
+            this.btnModificar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar_Dep.Image")));
+            this.btnModificar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar_Dep.Location = new System.Drawing.Point(135, 82);
             this.btnModificar_Dep.Name = "btnModificar_Dep";
-            this.btnModificar_Dep.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar_Dep.Size = new System.Drawing.Size(88, 39);
             this.btnModificar_Dep.TabIndex = 4;
             this.btnModificar_Dep.Text = "Modificar";
+            this.btnModificar_Dep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar_Dep.UseVisualStyleBackColor = true;
             this.btnModificar_Dep.Click += new System.EventHandler(this.btnModificar_Dep_Click);
             // 
             // btnEliminar_Dep
             // 
-            this.btnEliminar_Dep.Location = new System.Drawing.Point(247, 90);
+            this.btnEliminar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar_Dep.Image")));
+            this.btnEliminar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Dep.Location = new System.Drawing.Point(243, 82);
             this.btnEliminar_Dep.Name = "btnEliminar_Dep";
-            this.btnEliminar_Dep.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar_Dep.Size = new System.Drawing.Size(83, 39);
             this.btnEliminar_Dep.TabIndex = 5;
             this.btnEliminar_Dep.Text = "Eliminar";
+            this.btnEliminar_Dep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar_Dep.UseVisualStyleBackColor = true;
             this.btnEliminar_Dep.Click += new System.EventHandler(this.btnEliminar_Dep_Click);
             // 
             // btnCancelar_Dep
             // 
-            this.btnCancelar_Dep.Location = new System.Drawing.Point(358, 90);
+            this.btnCancelar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar_Dep.Image")));
+            this.btnCancelar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar_Dep.Location = new System.Drawing.Point(347, 82);
             this.btnCancelar_Dep.Name = "btnCancelar_Dep";
-            this.btnCancelar_Dep.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar_Dep.Size = new System.Drawing.Size(86, 39);
             this.btnCancelar_Dep.TabIndex = 6;
             this.btnCancelar_Dep.Text = "Cancelar";
+            this.btnCancelar_Dep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar_Dep.UseVisualStyleBackColor = true;
             // 
             // dgvDepartamento

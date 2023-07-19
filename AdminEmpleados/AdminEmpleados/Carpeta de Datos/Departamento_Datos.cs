@@ -22,18 +22,27 @@ namespace AdminEmpleados.Carpeta_de_Datos
 
         public bool Agregar(Departamento_Negocio oDepartamento_Negocio)
         {
-            return conexion.ejecucionComando_Noretornable("INSERT INTO Departamentos (departamento) VALUES ('"+ oDepartamento_Negocio.departamento +"')");     
+            SqlCommand comando = new SqlCommand("INSERT INTO Departamentos VALUES (@departamento)");
+            comando.Parameters.Add("@departamento", SqlDbType.VarChar).Value= oDepartamento_Negocio.departamento;
+
+            return conexion.ejecucionComando_Noretornable(comando);
+                //  return conexion.ejecucionComando_Noretornable("INSERT INTO Departamentos (departamento) VALUES ('"+ oDepartamento_Negocio.departamento +"')");     
         }
 
         public int Eliminar(Departamento_Negocio oDepartamento_Negocio)
         {
-                conexion.ejecucionComando_Noretornable("Delete from Departamentos Where ID=" + oDepartamento_Negocio.ID);
+                SqlCommand comando = new SqlCommand("DELETE FROM Departamentos WHERE ID= @id");
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = oDepartamento_Negocio.ID;
+                conexion.ejecucionComando_Noretornable(comando);
             return 1;
         }
 
         public int Modificar(Departamento_Negocio oDepartamento_Negocio)
         {
-            conexion.ejecucionComando_Noretornable("UPDATE Departamentos SET departamento = '"+oDepartamento_Negocio.departamento+ "' WHERE ID="+oDepartamento_Negocio.ID);
+            SqlCommand comando = new SqlCommand("UPDATE Departamentos SET departamento = @departamento WHERE ID = @id");
+            comando.Parameters.Add("@departamento", SqlDbType.VarChar).Value = oDepartamento_Negocio.departamento;
+            comando.Parameters.Add("@id", SqlDbType.Int).Value = oDepartamento_Negocio.ID;
+            conexion.ejecucionComando_Noretornable(comando);
             return 1;
         }
 

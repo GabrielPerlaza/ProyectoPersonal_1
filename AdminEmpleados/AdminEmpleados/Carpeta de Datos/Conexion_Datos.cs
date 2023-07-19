@@ -37,6 +37,28 @@ namespace AdminEmpleados.Carpeta_de_Datos
                 return false;
             }
             }
+        /* Metodo de dsobrecarga de INSERT DELETE UPDATE
+         */
+        public bool ejecucionComando_Noretornable(SqlCommand comando)
+        {
+            try
+            {
+                establecerConexion();
+                SqlCommand cmd = comando;
+                //cmd.CommandText = ; //Interpreta la sentencia SQL
+                cmd.Connection = cnx;
+                cnx.Open();
+                cmd.ExecuteNonQuery(); //Ejecutar la sentencia SQL
+                cnx.Close();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public DataSet EjecutarSentencia(SqlCommand cmd)
         {
 
