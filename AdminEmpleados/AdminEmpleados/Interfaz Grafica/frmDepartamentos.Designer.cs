@@ -52,6 +52,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(40, 48);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
@@ -114,6 +115,7 @@
             this.btnCancelar_Dep.Text = "Cancelar";
             this.btnCancelar_Dep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar_Dep.UseVisualStyleBackColor = true;
+            this.btnCancelar_Dep.Click += new System.EventHandler(this.btnCancelar_Dep_Click);
             // 
             // dgvDepartamento
             // 
