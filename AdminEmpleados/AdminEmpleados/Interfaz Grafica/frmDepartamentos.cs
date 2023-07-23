@@ -27,11 +27,9 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         private void btnAgregar_Dep_Click(object sender, EventArgs e)
         {
-        
-            MessageBox.Show("Conectando");
             // Obtener Nombre de departamento para la GUI
             oDepartamento_Datos.Agregar(RecuperarInformacion());
-            dgvDepartamento.DataSource = oDepartamento_Datos.Mostrar_Departamento().Tables[0];
+            LlegarGrid();
 
         }
         // Guardando los valores del campo de texto a las variables de negocio
@@ -52,13 +50,16 @@ namespace AdminEmpleados.Interfaz_Grafica
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
         {
             int indice = e.RowIndex;
+            dgvDepartamento.ClearSelection();
+            if (indice >= 0)
+            {
             txtID.Text = dgvDepartamento.Rows[indice].Cells[0].Value.ToString();
             txtDepartamento.Text = dgvDepartamento.Rows[indice].Cells[1].Value.ToString();
-
             btnAgregar_Dep.Enabled = false;
             btnEliminar_Dep.Enabled = true;
             btnCancelar_Dep.Enabled = true;
             btnModificar_Dep.Enabled = true;
+            }
         }
 
         private void btnEliminar_Dep_Click(object sender, EventArgs e)
@@ -76,6 +77,8 @@ namespace AdminEmpleados.Interfaz_Grafica
         public void LlegarGrid()
         {
             dgvDepartamento.DataSource = oDepartamento_Datos.Mostrar_Departamento().Tables[0];
+            dgvDepartamento.Columns[0].HeaderText = "Identificador";
+            dgvDepartamento.Columns[1].HeaderText = "Nombre del Departamento";
         }
         public void LimpiarEntradas()
         {
@@ -91,7 +94,7 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         private void btnCancelar_Dep_Click(object sender, EventArgs e)
         {
-            LimpiarEntradas();
+            LimpiarEntradas(); 
         }
     }
       

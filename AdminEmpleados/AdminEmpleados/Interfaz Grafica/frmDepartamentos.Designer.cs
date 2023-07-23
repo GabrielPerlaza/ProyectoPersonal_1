@@ -119,6 +119,7 @@
             // 
             // dgvDepartamento
             // 
+            this.dgvDepartamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartamento.Location = new System.Drawing.Point(40, 135);
             this.dgvDepartamento.Name = "dgvDepartamento";
@@ -139,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 340);
+            this.ClientSize = new System.Drawing.Size(465, 335);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDepartamento);
             this.Controls.Add(this.btnCancelar_Dep);
@@ -150,7 +151,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Name = "frmDepartamentos";
-            this.Text = "frmDepartamentos";
+            this.Text = "Gestion de Departamentos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
