@@ -47,6 +47,7 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -145,6 +146,7 @@
             this.picFoto.Location = new System.Drawing.Point(12, 22);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(169, 138);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 12;
             this.picFoto.TabStop = false;
             // 
@@ -155,6 +157,7 @@
             this.cmbxDepartamento.Name = "cmbxDepartamento";
             this.cmbxDepartamento.Size = new System.Drawing.Size(356, 21);
             this.cmbxDepartamento.TabIndex = 13;
+            this.cmbxDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbxDepartamento_SelectedIndexChanged);
             // 
             // btnExaminar
             // 
@@ -164,6 +167,7 @@
             this.btnExaminar.TabIndex = 14;
             this.btnExaminar.Text = "Examinar";
             this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
             // 
             // btnAgregar
             // 
@@ -204,16 +208,27 @@
             // dgvEmpleado
             // 
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleado.Location = new System.Drawing.Point(12, 294);
+            this.dgvEmpleado.Location = new System.Drawing.Point(12, 261);
             this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.Size = new System.Drawing.Size(616, 150);
+            this.dgvEmpleado.Size = new System.Drawing.Size(616, 158);
             this.dgvEmpleado.TabIndex = 19;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(483, 425);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 37);
+            this.btnRegresar.TabIndex = 20;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 456);
+            this.ClientSize = new System.Drawing.Size(640, 487);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
@@ -235,6 +250,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEmpleados";
             this.Text = "Gestion de Empleados";
+            this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             this.ResumeLayout(false);
@@ -263,5 +279,6 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgvEmpleado;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

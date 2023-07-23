@@ -23,12 +23,14 @@ namespace AdminEmpleados
         {
             oDepartamentos_Forms = new frmDepartamentos();
             oDepartamentos_Forms.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             oEmpleados_Forms = new frmEmpleados();
             oEmpleados_Forms.Show();
+            this.Hide();
         }
     }
 }

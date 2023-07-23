@@ -15,7 +15,7 @@ namespace AdminEmpleados.Interfaz_Grafica
     {
         Departamento_Datos oDepartamento_Datos;
         Departamento_Negocio oDepartamento_Negocio;
-
+        Form1 formula1;
 
         public frmDepartamentos()
         {
@@ -95,6 +95,13 @@ namespace AdminEmpleados.Interfaz_Grafica
         private void btnCancelar_Dep_Click(object sender, EventArgs e)
         {
             LimpiarEntradas(); 
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            formula1 = new Form1();
+            formula1.Show();
+            this.Hide();
         }
     }
       

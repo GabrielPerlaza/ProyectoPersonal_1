@@ -38,13 +38,14 @@
             this.btnCancelar_Dep = new System.Windows.Forms.Button();
             this.dgvDepartamento = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 32);
+            this.label1.Location = new System.Drawing.Point(29, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 0;
@@ -53,14 +54,14 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(40, 48);
+            this.txtID.Location = new System.Drawing.Point(32, 29);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 1;
             // 
             // txtDepartamento
             // 
-            this.txtDepartamento.Location = new System.Drawing.Point(156, 48);
+            this.txtDepartamento.Location = new System.Drawing.Point(148, 29);
             this.txtDepartamento.Name = "txtDepartamento";
             this.txtDepartamento.Size = new System.Drawing.Size(277, 20);
             this.txtDepartamento.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             this.btnAgregar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar_Dep.Image")));
             this.btnAgregar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar_Dep.Location = new System.Drawing.Point(40, 82);
+            this.btnAgregar_Dep.Location = new System.Drawing.Point(32, 63);
             this.btnAgregar_Dep.Name = "btnAgregar_Dep";
             this.btnAgregar_Dep.Size = new System.Drawing.Size(79, 39);
             this.btnAgregar_Dep.TabIndex = 3;
@@ -82,7 +83,7 @@
             // 
             this.btnModificar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar_Dep.Image")));
             this.btnModificar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar_Dep.Location = new System.Drawing.Point(135, 82);
+            this.btnModificar_Dep.Location = new System.Drawing.Point(127, 63);
             this.btnModificar_Dep.Name = "btnModificar_Dep";
             this.btnModificar_Dep.Size = new System.Drawing.Size(88, 39);
             this.btnModificar_Dep.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             this.btnEliminar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar_Dep.Image")));
             this.btnEliminar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Dep.Location = new System.Drawing.Point(243, 82);
+            this.btnEliminar_Dep.Location = new System.Drawing.Point(235, 63);
             this.btnEliminar_Dep.Name = "btnEliminar_Dep";
             this.btnEliminar_Dep.Size = new System.Drawing.Size(83, 39);
             this.btnEliminar_Dep.TabIndex = 5;
@@ -108,7 +109,7 @@
             // 
             this.btnCancelar_Dep.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar_Dep.Image")));
             this.btnCancelar_Dep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar_Dep.Location = new System.Drawing.Point(347, 82);
+            this.btnCancelar_Dep.Location = new System.Drawing.Point(339, 63);
             this.btnCancelar_Dep.Name = "btnCancelar_Dep";
             this.btnCancelar_Dep.Size = new System.Drawing.Size(86, 39);
             this.btnCancelar_Dep.TabIndex = 6;
@@ -121,7 +122,7 @@
             // 
             this.dgvDepartamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDepartamento.Location = new System.Drawing.Point(40, 135);
+            this.dgvDepartamento.Location = new System.Drawing.Point(32, 116);
             this.dgvDepartamento.Name = "dgvDepartamento";
             this.dgvDepartamento.Size = new System.Drawing.Size(393, 183);
             this.dgvDepartamento.TabIndex = 7;
@@ -130,17 +131,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 32);
+            this.label2.Location = new System.Drawing.Point(145, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre del Departamento:";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.Location = new System.Drawing.Point(339, 305);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(86, 37);
+            this.btnRegresar.TabIndex = 9;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmDepartamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 335);
+            this.ClientSize = new System.Drawing.Size(465, 344);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDepartamento);
             this.Controls.Add(this.btnCancelar_Dep);
@@ -169,5 +184,6 @@
         private System.Windows.Forms.Button btnCancelar_Dep;
         private System.Windows.Forms.DataGridView dgvDepartamento;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
