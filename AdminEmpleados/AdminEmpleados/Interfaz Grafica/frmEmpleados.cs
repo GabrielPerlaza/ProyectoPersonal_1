@@ -17,14 +17,15 @@ namespace AdminEmpleados.Interfaz_Grafica
     {
         byte[] imageByte;
         SqlCommand comando;
-        Empleados_Datos objEmpDa;
+        Empleados_Datos oEmpleados_datos;
 
         public frmEmpleados()
         {
+            oEmpleados_datos = new Empleados_Datos();
             InitializeComponent();
             LlenarGrid();
             Limpiar();
-            objEmpDa = new Empleados_Datos();
+            
 
         }
 
@@ -80,12 +81,12 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         public void LlenarGrid()
         {
-            dgvEmpleado.DataSource = objEmpDa.MostrarEmpleado().Tables[0];
+            dgvEmpleado.DataSource = oEmpleados_datos.MostrarEmpleado().Tables[0];
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            objEmpDa.Agregar(RecolectarDatos());
+            oEmpleados_datos.Agregar(RecolectarDatos());
             LlenarGrid();
         }
 
@@ -125,13 +126,13 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            objEmpDa.Modificar(RecolectarDatos());
+            oEmpleados_datos.Modificar(RecolectarDatos());
             LlenarGrid();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            objEmpDa.Eliminar(RecolectarDatos());
+            oEmpleados_datos.Eliminar(RecolectarDatos());
             LlenarGrid();
         }
 

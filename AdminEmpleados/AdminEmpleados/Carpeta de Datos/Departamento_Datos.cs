@@ -32,23 +32,20 @@ namespace AdminEmpleados.Carpeta_de_Datos
         {
              SqlCommand comando = new SqlCommand("DELETE FROM Departamentos WHERE ID= @id");
              comando.Parameters.Add("@id", SqlDbType.Int).Value = oDepartamento_Negocio.ID;
-             return conexion.ejecucionComando_Noretornable(comando);
-            
+             return conexion.ejecucionComando_Noretornable(comando);  
         }
-
+        
         public bool Modificar(Departamento_Negocio oDepartamento_Negocio)
         {
             SqlCommand comando = new SqlCommand("UPDATE Departamentos SET departamento = @departamento WHERE ID = @id");
             comando.Parameters.Add("@departamento", SqlDbType.VarChar).Value = oDepartamento_Negocio.departamento;
             comando.Parameters.Add("@id", SqlDbType.Int).Value = oDepartamento_Negocio.ID;
-            return conexion.ejecucionComando_Noretornable(comando);
-            
+            return conexion.ejecucionComando_Noretornable(comando);       
         }
-
+        
         public DataSet Mostrar_Departamento()
         {
             SqlCommand sentencia = new SqlCommand("SELECT * FROM Departamentos");
-
             return conexion.EjecutarSentencia(sentencia);
         }
 

@@ -20,8 +20,8 @@ namespace AdminEmpleados.Carpeta_de_Datos
 
         public bool Agregar(Empleados_Negocio objEmpleados)
         {
-            SqlCommand comando = new SqlCommand("INSERT INTO Empleados VALUES(@id ,@nombre, @primerapellido, @segundoapellido, @correo)");
-            comando.Parameters.Add("@id", SqlDbType.Int).Value = objEmpleados.ID;
+            SqlCommand comando = new SqlCommand("INSERT INTO Empleados VALUES(@nombre, @primerapellido, @segundoapellido, @correo)");
+           // comando.Parameters.Add("@id", SqlDbType.Int).Value = objEmpleados.ID;
             comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value= objEmpleados.nombre;
             comando.Parameters.Add("@primerapellido", SqlDbType.VarChar).Value = objEmpleados.primerApellido;
             comando.Parameters.Add("@segundoapellido", SqlDbType.VarChar).Value = objEmpleados.segundoApellido;
@@ -38,12 +38,14 @@ namespace AdminEmpleados.Carpeta_de_Datos
 
         public bool Modificar (Empleados_Negocio objEmpleados)
         {
+           
             SqlCommand comando = new SqlCommand("UPDATE Empleados SET nombre = @nombre, primerapellido = @primerapellido, segundoapellido = @segundoapellido, correo = @correo WHERE ID = @id");
             comando.Parameters.Add("@id", SqlDbType.Int).Value = objEmpleados.ID;
             comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = objEmpleados.nombre;
             comando.Parameters.Add("@primerapellido", SqlDbType.VarChar).Value = objEmpleados.primerApellido;
             comando.Parameters.Add("@segundoapellido", SqlDbType.VarChar).Value = objEmpleados.segundoApellido;
             comando.Parameters.Add("@correo", SqlDbType.VarChar).Value = objEmpleados.correo;
+           
             return cnx.ejecucionComando_Noretornable(comando);
         }
 
