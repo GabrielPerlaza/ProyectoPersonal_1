@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Carpeta de Datos\Conexion_Datos.cs" />
     <Compile Include="Carpeta de Datos\Departamento_Datos.cs" />
+    <Compile Include="Carpeta de Datos\Empleados_Datos.cs" />
     <Compile Include="Carpeta de Negocio\Departamento_Negocio.cs" />
     <Compile Include="Carpeta de Negocio\Empleados_Negocio.cs" />
     <Compile Include="Form1.cs">
