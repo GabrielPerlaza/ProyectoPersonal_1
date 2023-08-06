@@ -15,13 +15,12 @@ namespace AdminEmpleados.Carpeta_de_Datos
 
         public Empleados_Datos()
         {
-            cnx = new Conexion_Datos();
+            this.cnx = new Conexion_Datos();
         }
 
         public bool Agregar(Empleados_Negocio objEmpleados)
         {
             SqlCommand comando = new SqlCommand("INSERT INTO Empleados VALUES(@nombre, @primerapellido, @segundoapellido, @correo)");
-           // comando.Parameters.Add("@id", SqlDbType.Int).Value = objEmpleados.ID;
             comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value= objEmpleados.nombre;
             comando.Parameters.Add("@primerapellido", SqlDbType.VarChar).Value = objEmpleados.primerApellido;
             comando.Parameters.Add("@segundoapellido", SqlDbType.VarChar).Value = objEmpleados.segundoApellido;
@@ -49,7 +48,7 @@ namespace AdminEmpleados.Carpeta_de_Datos
             return cnx.ejecucionComando_Noretornable(comando);
         }
 
-        public DataSet MostrarEmpleado()
+        public DataSet Mostrar_Empleado()
         {
             SqlCommand sentencia = new SqlCommand("SELECT * FROM Empleados");
             return cnx.EjecutarSentencia(sentencia);

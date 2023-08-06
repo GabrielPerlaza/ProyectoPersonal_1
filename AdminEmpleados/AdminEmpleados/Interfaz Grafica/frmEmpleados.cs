@@ -15,126 +15,97 @@ namespace AdminEmpleados.Interfaz_Grafica
 {
     public partial class frmEmpleados : Form
     {
-        byte[] imageByte;
-        SqlCommand comando;
+ 
+    
         Empleados_Datos oEmpleados_datos;
+        Empleados_Negocio oEmpleado_Negocio;
+        Form1 formula1;
+
 
         public frmEmpleados()
         {
             oEmpleados_datos = new Empleados_Datos();
             InitializeComponent();
             LlenarGrid();
-            Limpiar();
-            
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            oEmpleados_datos.Agregar(RecuperarInformacion());
+            LlenarGrid();
+        }
+
+        private Empleados_Negocio RecuperarInformacion()
+        {
+            oEmpleado_Negocio = new Empleados_Negocio();
+            int ID = 0; int.TryParse(txtID.Text, out ID);
+            oEmpleado_Negocio.ID = ID;
+            oEmpleado_Negocio.nombre = txtNombre.Text;
+            oEmpleado_Negocio.primerApellido = txtPrimerApellido.Text;
+            oEmpleado_Negocio.segundoApellido = txtSegundoApellido.Text;
+            oEmpleado_Negocio.correo = txtCorreo.Text;
+            return oEmpleado_Negocio;
+        }
+
+        private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int indice = e.RowIndex;
+            dgvEmpleado.ClearSelection();
+            txtID.Text = dgvEmpleado.Rows[indice].Cells[0].Value.ToString();
+            txtNombre.Text = dgvEmpleado.Rows[indice].Cells[1].Value.ToString();
+            txtPrimerApellido.Text = dgvEmpleado.Rows[indice].Cells[2].ToString();
+            txtSegundoApellido.Text = dgvEmpleado.Rows[indice].Cells[3].ToString();
+            txtCorreo.Text = dgvEmpleado.Rows[indice].Cells[4].ToString();
+        }
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            oEmpleados_datos.Eliminar(RecuperarInformacion());
+            LlenarGrid();
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            oEmpleados_datos.Modificar(RecuperarInformacion());
+            LlenarGrid();
+        }
+
+        public void LlenarGrid()
+        {
+            dgvEmpleado.DataSource = oEmpleados_datos.Mostrar_Empleado().Tables[0];
+        }
+
+        public void Limpiar()
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtCorreo.Text = "";
         }
 
         private void cmbxDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            Departamento_Datos oDepartamento_Datos = new Departamento_Datos();
-            cmbxDepartamento.DataSource = oDepartamento_Datos.Mostrar_Departamento().Tables[0];
-            cmbxDepartamento.DisplayMember = "departamento";
-            cmbxDepartamento.ValueMember = "ID";
+     
 
         }
 
         private void btnExaminar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog selector = new OpenFileDialog();
-            selector.Title = "Seleccionar Imagen";
-            if (selector.ShowDialog() == DialogResult.OK)
-            {
-                picFoto.Image = Image.FromStream(selector.OpenFile());
-                MemoryStream memoria = new MemoryStream();
-                picFoto.Image.Save(memoria, System.Drawing.Imaging.ImageFormat.Png);
-                imageByte = memoria.ToArray();
+          
         }
-        }
-        private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int indice = e.RowIndex;
-            dgvEmpleado.ClearSelection();
-            if (indice >= 0)
-            {
-                txtID.Text = dgvEmpleado.Rows[indice].Cells[0].Value.ToString();
-                txtNombre.Text = dgvEmpleado.Rows[indice].Cells[1].Value.ToString();
-                txtPrimerApellido.Text = dgvEmpleado.Rows[indice].Cells[2].Value.ToString();
-                txtSegundoApellido.Text = dgvEmpleado.Rows[indice].Cells[3].Value.ToString();
-                txtCorreo.Text = dgvEmpleado.Rows[indice].Cells[4].Value.ToString();
-               // cmbxDepartamento.SelectedItem = dgvEmpleado.Rows[indice].Cells[5].Value.ToString();
-            }
-
-        }
-        public void Limpiar()
-        {
-            txtID.Text = "";
-            txtCorreo.Text = "";
-            txtNombre.Text = "";
-            txtPrimerApellido.Text = "";
-            txtSegundoApellido.Text = "";
-        }
-
-        public void LlenarGrid()
-        {
-            dgvEmpleado.DataSource = oEmpleados_datos.MostrarEmpleado().Tables[0];
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            oEmpleados_datos.Agregar(RecolectarDatos());
-            LlenarGrid();
-        }
-
-
-        private Empleados_Negocio RecolectarDatos()
-        {
-            Empleados_Negocio objEmpleados = new Empleados_Negocio();
-
-            int codigoEmpleado = 1;
-
-            int.TryParse(txtID.Text, out codigoEmpleado);
-
-            objEmpleados.ID = codigoEmpleado;
-            objEmpleados.nombre = txtNombre.Text;
-            objEmpleados.primerApellido = txtPrimerApellido.Text;
-            objEmpleados.segundoApellido = txtSegundoApellido.Text;
-            objEmpleados.correo = txtCorreo.Text;
-
-            int idDepartamento = 1;
-
-            int.TryParse(cmbxDepartamento.SelectedValue.ToString(), out idDepartamento);
-
-            objEmpleados.departamento = idDepartamento;
-
-            objEmpleados.fotoEmpleado = imageByte;
-
-            return objEmpleados;
-
-        }
-
+      
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            formula1 = new Form1();
+            formula1.Show();
             this.Hide();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            oEmpleados_datos.Modificar(RecolectarDatos());
-            LlenarGrid();
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            oEmpleados_datos.Eliminar(RecolectarDatos());
-            LlenarGrid();
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

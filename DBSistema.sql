@@ -9,4 +9,5 @@ INSERT INTO
            ('programacion')
 GO
 
+SELECT * FROM Empleados;
 
