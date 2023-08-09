@@ -19,6 +19,7 @@ namespace AdminEmpleados.Interfaz_Grafica
     
         Empleados_Datos oEmpleados_datos;
         Empleados_Negocio oEmpleado_Negocio;
+        Departamento_Datos oDepartamento_Datos;
         Form1 formula1;
 
 
@@ -90,7 +91,11 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-     
+            oDepartamento_Datos = new Departamento_Datos();
+
+            cmbxDepartamento.DataSource = oDepartamento_Datos.Mostrar_Departamento().Tables[0];
+            cmbxDepartamento.DisplayMember = "departamento";
+            cmbxDepartamento.ValueMember = "ID";
 
         }
 
