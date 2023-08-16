@@ -25,7 +25,6 @@ namespace AdminEmpleados.Carpeta_de_Datos
             
             SqlCommand comando = new SqlCommand("INSERT INTO Departamentos VALUES (@departamento)");
             comando.Parameters.Add("@departamento", SqlDbType.VarChar).Value= oDepartamento_Negocio.departamento;
-            
             return conexion.ejecucionComando_Noretornable(comando);
                 //  return conexion.ejecucionComando_Noretornable("INSERT INTO Departamentos (departamento) VALUES ('"+ oDepartamento_Negocio.departamento +"')");     
         }

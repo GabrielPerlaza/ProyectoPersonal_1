@@ -20,6 +20,7 @@ namespace AdminEmpleados.Interfaz_Grafica
         Empleados_Datos oEmpleados_datos;
         Empleados_Negocio oEmpleado_Negocio;
         Departamento_Datos oDepartamento_Datos;
+        Conexion_Datos cnx;
         Form1 formula1;
 
 
@@ -28,6 +29,7 @@ namespace AdminEmpleados.Interfaz_Grafica
             oEmpleados_datos = new Empleados_Datos();
             InitializeComponent();
             LlenarGrid();
+            
 
         }
 
@@ -53,17 +55,22 @@ namespace AdminEmpleados.Interfaz_Grafica
         {
             int indice = e.RowIndex;
             dgvEmpleado.ClearSelection();
-            txtID.Text = dgvEmpleado.Rows[indice].Cells[0].Value.ToString();
-            txtNombre.Text = dgvEmpleado.Rows[indice].Cells[1].Value.ToString();
-            txtPrimerApellido.Text = dgvEmpleado.Rows[indice].Cells[2].ToString();
-            txtSegundoApellido.Text = dgvEmpleado.Rows[indice].Cells[3].ToString();
-            txtCorreo.Text = dgvEmpleado.Rows[indice].Cells[4].ToString();
+            if(indice >= 0)
+            {
+                txtID.Text = dgvEmpleado.Rows[indice].Cells[0].Value.ToString();
+                txtNombre.Text = dgvEmpleado.Rows[indice].Cells[1].Value.ToString();
+                txtPrimerApellido.Text = dgvEmpleado.Rows[indice].Cells[2].Value.ToString();
+                txtSegundoApellido.Text = dgvEmpleado.Rows[indice].Cells[3].Value.ToString();
+                txtCorreo.Text = dgvEmpleado.Rows[indice].Cells[4].Value.ToString();
+            }
+          
         }
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             oEmpleados_datos.Eliminar(RecuperarInformacion());
             LlenarGrid();
         }
+
         private void btnModificar_Click(object sender, EventArgs e)
         {
             oEmpleados_datos.Modificar(RecuperarInformacion());
@@ -73,6 +80,7 @@ namespace AdminEmpleados.Interfaz_Grafica
         public void LlenarGrid()
         {
             dgvEmpleado.DataSource = oEmpleados_datos.Mostrar_Empleado().Tables[0];
+        
         }
 
         public void Limpiar()

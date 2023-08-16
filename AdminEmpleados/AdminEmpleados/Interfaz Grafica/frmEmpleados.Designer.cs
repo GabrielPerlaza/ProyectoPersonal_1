@@ -232,6 +232,7 @@
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.Size = new System.Drawing.Size(616, 158);
             this.dgvEmpleado.TabIndex = 19;
+            this.dgvEmpleado.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // btnRegresar
             // 
