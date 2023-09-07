@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using AdminEmpleados.Carpeta_de_Datos;
 using AdminEmpleados.Carpeta_de_Negocio;
-using AdminEmpleados.Carpeta_de_Datos;
+using System;
+using System.Windows.Forms;
 namespace AdminEmpleados.Interfaz_Grafica
 {
     public partial class frmDepartamentos : Form
@@ -42,9 +35,9 @@ namespace AdminEmpleados.Interfaz_Grafica
 
             oDepartamento_Negocio.ID = ID;
             oDepartamento_Negocio.departamento = txtDepartamento.Text;
-            
+
             return oDepartamento_Negocio;
-            
+
         }
 
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
@@ -53,17 +46,17 @@ namespace AdminEmpleados.Interfaz_Grafica
             dgvDepartamento.ClearSelection();
             if (indice >= 0)
             {
-            txtID.Text = dgvDepartamento.Rows[indice].Cells[0].Value.ToString();
-            txtDepartamento.Text = dgvDepartamento.Rows[indice].Cells[1].Value.ToString();
-            btnAgregar_Dep.Enabled = false;
-            btnEliminar_Dep.Enabled = true;
-            btnCancelar_Dep.Enabled = true;
-            btnModificar_Dep.Enabled = true;
+                txtID.Text = dgvDepartamento.Rows[indice].Cells[0].Value.ToString();
+                txtDepartamento.Text = dgvDepartamento.Rows[indice].Cells[1].Value.ToString();
+                btnAgregar_Dep.Enabled = false;
+                btnEliminar_Dep.Enabled = true;
+                btnCancelar_Dep.Enabled = true;
+                btnModificar_Dep.Enabled = true;
             }
         }
 
         private void btnEliminar_Dep_Click(object sender, EventArgs e)
-        { 
+        {
             oDepartamento_Datos.Eliminar(RecuperarInformacion());
             LlegarGrid();
         }
@@ -84,7 +77,7 @@ namespace AdminEmpleados.Interfaz_Grafica
         {
             txtID.Text = "";
             txtDepartamento.Text = "";
-            
+
             btnAgregar_Dep.Enabled = true;
             btnEliminar_Dep.Enabled = false;
             btnCancelar_Dep.Enabled = false;
@@ -94,7 +87,7 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         private void btnCancelar_Dep_Click(object sender, EventArgs e)
         {
-            LimpiarEntradas(); 
+            LimpiarEntradas();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -104,7 +97,7 @@ namespace AdminEmpleados.Interfaz_Grafica
             this.Hide();
         }
     }
-      
-    
+
+
 }
 

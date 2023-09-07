@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 namespace AdminEmpleados.Carpeta_de_Datos
@@ -11,10 +7,10 @@ namespace AdminEmpleados.Carpeta_de_Datos
     {
         SqlConnection cnx;
         string cadena_Conexion = "Data Source = DESKTOP-369FNH8 ; Initial Catalog= dbSistema ;Integrated Security = True";
-      
+
         public SqlConnection establecerConexion()
         {
-           return this.cnx = new SqlConnection(cadena_Conexion);
+            return this.cnx = new SqlConnection(cadena_Conexion);
         }
 
         /*Metodo aplicar sentencia INSERT, DELETE, UPDATE SIN RETORNO DE DATOS*/
@@ -32,12 +28,12 @@ namespace AdminEmpleados.Carpeta_de_Datos
 
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }
-            }
-        /* Metodo de dsobrecarga de INSERT DELETE UPDATE
+        }
+        /* Metodo de sobrecarga de INSERT DELETE UPDATE
          */
         public bool ejecucionComando_Noretornable(SqlCommand comando)
         {
@@ -62,14 +58,14 @@ namespace AdminEmpleados.Carpeta_de_Datos
         public DataSet EjecutarSentencia(SqlCommand cmd)
         {
 
-            DataSet ds = new DataSet();  
-            SqlDataAdapter adaptador =  new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            SqlDataAdapter adaptador = new SqlDataAdapter();
             try
             {
-                SqlCommand sqlComando =   new SqlCommand();
+                SqlCommand sqlComando = new SqlCommand();
                 sqlComando = cmd; // Asignamos el valor comando que se ingreso por el metodo
                 sqlComando.Connection = establecerConexion(); // se establece conexion
-                adaptador.SelectCommand = sqlComando; 
+                adaptador.SelectCommand = sqlComando;
                 cnx.Open();
                 adaptador.Fill(ds); //se adapta los datos al set
                 cnx.Close();
@@ -79,8 +75,8 @@ namespace AdminEmpleados.Carpeta_de_Datos
             {
                 return ds;
             }
-            
+
         }
-        }
+    }
 }
 

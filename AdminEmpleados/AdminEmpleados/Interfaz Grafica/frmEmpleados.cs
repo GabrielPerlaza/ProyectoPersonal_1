@@ -1,26 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdminEmpleados.Carpeta_de_Datos;
+using AdminEmpleados.Carpeta_de_Negocio;
+using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using AdminEmpleados.Carpeta_de_Negocio;
-using AdminEmpleados.Carpeta_de_Datos;
-using System.IO;
 namespace AdminEmpleados.Interfaz_Grafica
 {
     public partial class frmEmpleados : Form
     {
- 
-    
+
+
         Empleados_Datos oEmpleados_datos;
         Empleados_Negocio oEmpleado_Negocio;
         Departamento_Datos oDepartamento_Datos;
-        Conexion_Datos cnx;
         Form1 formula1;
 
 
@@ -29,7 +20,7 @@ namespace AdminEmpleados.Interfaz_Grafica
             oEmpleados_datos = new Empleados_Datos();
             InitializeComponent();
             LlenarGrid();
-            
+            txtID.Enabled = false;
 
         }
 
@@ -37,10 +28,14 @@ namespace AdminEmpleados.Interfaz_Grafica
         {
             oEmpleados_datos.Agregar(RecuperarInformacion());
             LlenarGrid();
+          
+            
+            
         }
 
         private Empleados_Negocio RecuperarInformacion()
         {
+
             oEmpleado_Negocio = new Empleados_Negocio();
             int ID = 0; int.TryParse(txtID.Text, out ID);
             oEmpleado_Negocio.ID = ID;
@@ -55,7 +50,7 @@ namespace AdminEmpleados.Interfaz_Grafica
         {
             int indice = e.RowIndex;
             dgvEmpleado.ClearSelection();
-            if(indice >= 0)
+            if (indice >= 0)
             {
                 txtID.Text = dgvEmpleado.Rows[indice].Cells[0].Value.ToString();
                 txtNombre.Text = dgvEmpleado.Rows[indice].Cells[1].Value.ToString();
@@ -63,24 +58,31 @@ namespace AdminEmpleados.Interfaz_Grafica
                 txtSegundoApellido.Text = dgvEmpleado.Rows[indice].Cells[3].Value.ToString();
                 txtCorreo.Text = dgvEmpleado.Rows[indice].Cells[4].Value.ToString();
             }
-          
+            
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = true;
+            btnBorrar.Enabled = true;
+            btnCancelar.Enabled = true;
+
         }
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             oEmpleados_datos.Eliminar(RecuperarInformacion());
             LlenarGrid();
+            Limpiar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            oEmpleados_datos.Modificar(RecuperarInformacion());
-            LlenarGrid();
+                oEmpleados_datos.Modificar(RecuperarInformacion());
+                LlenarGrid();
+                Limpiar();
         }
 
         public void LlenarGrid()
         {
             dgvEmpleado.DataSource = oEmpleados_datos.Mostrar_Empleado().Tables[0];
-        
+
         }
 
         public void Limpiar()
@@ -90,11 +92,14 @@ namespace AdminEmpleados.Interfaz_Grafica
             txtPrimerApellido.Text = "";
             txtSegundoApellido.Text = "";
             txtCorreo.Text = "";
+
+            btnAgregar.Enabled = true;
+            
         }
 
         private void cmbxDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
@@ -109,9 +114,9 @@ namespace AdminEmpleados.Interfaz_Grafica
 
         private void btnExaminar_Click(object sender, EventArgs e)
         {
-          
+
         }
-      
+
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             formula1 = new Form1();
@@ -123,6 +128,7 @@ namespace AdminEmpleados.Interfaz_Grafica
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+
         }
     }
 }
